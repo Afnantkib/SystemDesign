@@ -1,8 +1,8 @@
-package org.example;
+package org.iterableDesignPattern;
 
 import java.util.*;
 
-public class IterableDesignPattern {
+public class IterableOnLinkedList {
     public static class Node {
         int data;
         Node next;
