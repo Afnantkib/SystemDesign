@@ -1,10 +1,8 @@
 package org.example;
 
-import java.io.*;
 import java.util.*;
-import java.util.function.Consumer;
 
-public class Main {
+public class IterableDesignPattern {
     public static class Node {
         int data;
         Node next;
