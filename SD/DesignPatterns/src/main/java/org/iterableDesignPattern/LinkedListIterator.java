@@ -2,13 +2,13 @@ package org.iterableDesignPattern;
 
 import java.util.*;
 
-public class IterableOnLinkedList {
+public class LinkedListIterator {
     public static class Node {
         int data;
         Node next;
     }
 
-    public static class LinkedList implements Iterable {
+    public static class LinkedList implements Iterable<Integer> {
         Node head;
         Node tail;
         int size;
@@ -101,12 +101,12 @@ public class IterableOnLinkedList {
             }
         }
 
-        public Iterator iterator() {
-            return new LinkedListIterator(head);
+        public Iterator<Integer> iterator() {
+            return new MyLinkedListIterator(head);
         }
-        static class LinkedListIterator implements Iterator{
+        static class MyLinkedListIterator implements Iterator<Integer>{
         Node temp;
-        LinkedListIterator(Node head){
+        MyLinkedListIterator(Node head){
         this.temp=head;
         }
         public boolean hasNext() {
@@ -134,8 +134,12 @@ public class IterableOnLinkedList {
         list.addLast(30);
         list.addLast(40);
         Iterator<Integer> itr=list.iterator();
-        while(itr.hasNext()){
-            System.out.println(itr.next() +" ");
+//        while(itr.hasNext()){
+//            System.out.println(itr.next() +" ");
+//        }
+        //this is same as
+        for(int val:list){
+            System.out.println(val);
         }
 
     }
